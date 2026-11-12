@@ -1,5 +1,6 @@
 package kh.edu.istad.restapi.service.impl;
 
+import kh.edu.istad.restapi.dto.CreateUserRequest;
 import kh.edu.istad.restapi.model.User;
 import kh.edu.istad.restapi.repository.UserRepository;
 import kh.edu.istad.restapi.service.UserService;
@@ -27,7 +28,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User create(User user) {
+    public User create(CreateUserRequest request) {
+        User user = new User();
+        user.setName(request.name());
+        user.setUsername(request.username());
+        user.setPassword(request.password());
         return userRepository.insert(user);
     }
 

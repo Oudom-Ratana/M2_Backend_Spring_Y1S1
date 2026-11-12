@@ -1,5 +1,6 @@
 package kh.edu.istad.restapi.controller;
 
+import kh.edu.istad.restapi.dto.CreateUserRequest;
 import kh.edu.istad.restapi.model.User;
 import kh.edu.istad.restapi.repository.UserRepository;
 import kh.edu.istad.restapi.service.UserService;
@@ -32,8 +33,8 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public User createUser(@RequestBody User user){
-        return userService.create(user);
+    public User createUser(@RequestBody CreateUserRequest request){
+        return userService.create(request);
     }
 
     @DeleteMapping("/{id}")
