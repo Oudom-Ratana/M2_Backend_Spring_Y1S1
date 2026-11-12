@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: restapi
+server:
+  port: 168
+
