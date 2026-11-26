@@ -19,12 +19,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getAll() {
-        return userRepository.selectAll();
+        return userRepository.findAll();
     }
 
     @Override
     public User getById(UUID id) {
-        return userRepository.selectById(id).orElseThrow();
+        return userRepository.findById(id).orElseThrow(null);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
         user.setName(request.name());
         user.setUsername(request.username());
         user.setPassword(request.password());
-        return userRepository.insert(user);
+        return null;
     }
 
     @Override

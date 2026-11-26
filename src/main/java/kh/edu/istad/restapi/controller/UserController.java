@@ -2,9 +2,7 @@ package kh.edu.istad.restapi.controller;
 
 import kh.edu.istad.restapi.dto.CreateUserRequest;
 import kh.edu.istad.restapi.model.User;
-import kh.edu.istad.restapi.repository.UserRepository;
 import kh.edu.istad.restapi.service.UserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +31,7 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public User createUser(@RequestBody CreateUserRequest request){
+        public User createUser(@RequestBody CreateUserRequest request){
         return userService.create(request);
     }
 
